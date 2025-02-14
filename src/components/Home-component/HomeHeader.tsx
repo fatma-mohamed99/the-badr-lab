@@ -117,7 +117,7 @@ const HomeHeader: React.FC = () => {
                         <h1 className="text-4xl font-bold  ">
                             Welcome to the Badr Lab for Translational Microbiome Research!
                         </h1>
-                        <p className="mt-4 font-medium text-xl mb-6">
+                        <p className="mt-4 text-xl mb-6">
                             At the Badr Lab, we study the human microbiome's role in health and disease,
                             focusing on how imbalances influence infection severity and patient outcomes.
                             Our research aims to identify microbial signatures and biomarkers for infection, cancer, and beyond.
