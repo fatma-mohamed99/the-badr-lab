@@ -1,12 +1,15 @@
-import React from "react";
-import MainLayout from './../layouts/MainLayout';
+
+import Highlights from './../components/Home-component/Highlights';
+import HomeLayout from './../layouts/HomeLayout';
 
 const Home: React.FC = () => {
     return (
-        <MainLayout>
-            <h1>Welcome to Our Website</h1>
-            <p>This is the home page.</p>
-        </MainLayout>
+        <HomeLayout >
+
+
+            <Highlights />
+
+        </HomeLayout >
     );
 };
 
