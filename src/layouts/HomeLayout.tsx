@@ -9,8 +9,10 @@ interface HomeLayoutProps {
 const HomeLayout: React.FC<HomeLayoutProps> = ({ children }) => {
     return (
         <div className="flex flex-col  w-full text-white">
-            < HomeHeader />
-            <main  >{children}</main>
+            <div className="flex flex-col min-h-screen w-full  ">
+                < HomeHeader />
+                <main  >{children}</main>
+            </div>
             <Footer />
         </div>
     );

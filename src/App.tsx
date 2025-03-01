@@ -5,6 +5,7 @@ import Research from "./pages/Research";
 import Team from "./pages/Team";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import ResearchDetail from './pages/ResearchDetail';
 
 const App: React.FC = () => {
   return (
@@ -12,6 +13,7 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/research" element={<Research />} />
+        <Route path="/research/:id" element={<ResearchDetail />} />
         <Route path="/team" element={<Team />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="*" element={<NotFound />} />

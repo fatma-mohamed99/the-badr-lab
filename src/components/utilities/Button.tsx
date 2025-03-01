@@ -13,7 +13,7 @@ const Button: React.FC<ButtonProps> = ({
     className = "",
     variant = 'gradient'
 }) => {
-    const baseClasses = "px-4 py-2 rounded-md text-white hover:scale-105 transition-all";
+    const baseClasses = "px-4 py-2 rounded-md text-white hover:scale-[1.01] transition-all";
     const gradientClasses = "bg-gradient-to-l from-main to-PrimaryAccent";
 
     const finalClasses = variant === 'gradient'
