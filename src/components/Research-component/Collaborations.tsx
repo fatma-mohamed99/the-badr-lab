@@ -125,7 +125,7 @@ const Collaborations: React.FC = () => {
                 transition={{ duration: 0.6 }}
                 className="text-center mb-8"
             >
-                <h2 className="text-3xl font-semibold flex gap-3 justify-center inset-0 bg-gradient-to-t from-transparent to-main/5 px-10 py-14 rounded-xl ">
+                <h2 className="text-3xl font-semibold flex gap-3 justify-center w-fit mx-auto bg-gradient-to-t from-transparent to-main/5 p-8 rounded-xl ">
                     <HeartHandshake className="my-auto text-main/80" size={36} />
                     <span>Collaborations</span>
                 </h2>
