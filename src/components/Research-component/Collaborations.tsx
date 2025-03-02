@@ -91,72 +91,78 @@ const Collaborations: React.FC = () => {
         },
     ];
 
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.3,
-                delayChildren: 0.1
-            }
-        }
-    };
-
-    const universityVariants = {
-        hidden: { opacity: 0, y: 50 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.7,
-                type: "spring",
-                stiffness: 100,
-                damping: 12
-            }
-        }
-    };
-
     return (
         <div className="py-10 px-4 container mx-auto">
             <motion.div
-                initial={{ y: -20, opacity: 0 }}
-                whileInView={{ y: 0, opacity: 1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                transition={{ duration: 0.6 }}
+                initial={{ y: -50, opacity: 0, scale: 0.8 }}
+                whileInView={{ y: 0, opacity: 1, scale: 1 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                    duration: 0.8,
+                    type: "spring",
+                    bounce: 0.4
+                }}
                 className="text-center mb-8"
             >
                 <h2 className="text-3xl font-semibold flex gap-3 justify-center w-fit mx-auto bg-gradient-to-t from-transparent to-main/5 p-8 rounded-xl ">
-                    <HeartHandshake className="my-auto text-main/80" size={36} />
+                    <motion.div
+                        initial={{ rotate: -20, scale: 0.5 }}
+                        animate={{ rotate: 0, scale: 1 }}
+                        transition={{
+                            duration: 0.6,
+                            delay: 0.3,
+                            type: "spring"
+                        }}
+                    >
+                        <HeartHandshake className="my-auto text-main/80" size={36} />
+                    </motion.div>
                     <span>Collaborations</span>
                 </h2>
             </motion.div>
 
             <div className="lg:max-w-6xl mx-auto">
-                {universities.map((university) => (
+                {universities.map((university, uIndex) => (
                     <motion.div
                         key={university.id}
-                        initial={{ opacity: 0, y: 50 }}
+                        initial={{ opacity: 0, y: 80 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: false, amount: 0.2 }}
+                        viewport={{ once: true, amount: 0.2 }}
                         transition={{
-                            duration: 0.7,
+                            duration: 0.8,
                             type: "spring",
-                            stiffness: 100,
-                            damping: 12
+                            stiffness: 80,
+                            damping: 12,
+                            delay: uIndex * 0.2
                         }}
                     >
                         <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: false, amount: 0.5 }}
-                            transition={{ duration: 0.5 }}
+                            initial={{ opacity: 0, x: -50, scale: 0.9 }}
+                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
+                            viewport={{ once: true, amount: 0.5 }}
+                            transition={{
+                                duration: 0.7,
+                                type: "spring",
+                                stiffness: 100,
+                                damping: 10,
+                                delay: 0.1 + uIndex * 0.1
+                            }}
                             className="bg-gradient-to-l from-main/10 to-PrimaryAccent/10 px-4 py-2 rounded-xl"
                         >
-                            <h3 className="text-xl font-bold flex gap-2"><Sparkle className="my-auto text-main" /> {university.name}</h3>
+                            <h3 className="text-xl font-bold flex gap-2">
+                                <motion.div
+                                    initial={{ rotate: 180, opacity: 0 }}
+                                    whileInView={{ rotate: 0, opacity: 1 }}
+                                    viewport={{ once: false }}
+                                    transition={{ duration: 0.7, delay: 0.2 + uIndex * 0.1 }}
+                                >
+                                    <Sparkle className="my-auto text-main" />
+                                </motion.div>
+                                {university.name}
+                            </h3>
                         </motion.div>
 
                         <div className="p-6 space-y-8">
-                            {university.departments.map((department) => {
+                            {university.departments.map((department, dIndex) => {
                                 if (!department.collaborators || department.collaborators.length === 0) {
                                     return null;
                                 }
@@ -164,18 +170,24 @@ const Collaborations: React.FC = () => {
                                 return (
                                     <motion.div
                                         key={department.id}
-                                        initial={{ opacity: 0, y: 20 }}
-                                        whileInView={{ opacity: 1, y: 0 }}
-                                        viewport={{ once: false, amount: 0.3 }}
-                                        transition={{ duration: 0.5 }}
+                                        initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                                        viewport={{ once: true, amount: 0.3 }}
+                                        transition={{
+                                            duration: 0.7,
+                                            delay: 0.2 + dIndex * 0.15,
+                                            type: "spring",
+                                            stiffness: 90,
+                                            damping: 12
+                                        }}
                                         className="bg-gray-50 rounded-lg p-5 border-l-4 border-PrimaryAccent shadow-md"
                                     >
                                         {department.name && (
                                             <motion.h4
-                                                initial={{ opacity: 0, y: 10 }}
+                                                initial={{ opacity: 0, y: 15 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
-                                                viewport={{ once: false, amount: 0.8 }}
-                                                transition={{ duration: 0.4 }}
+                                                viewport={{ once: true, amount: 0.8 }}
+                                                transition={{ duration: 0.6, delay: 0.3 + dIndex * 0.1 }}
                                                 className="font-bold mb-4 text-lg"
                                             >
                                                 {department.name}
@@ -187,21 +199,28 @@ const Collaborations: React.FC = () => {
                                                 collaborator.name && (
                                                     <motion.div
                                                         key={collaborator.id}
-                                                        initial={{ opacity: 0, x: -20 }}
+                                                        initial={{ opacity: 0, x: -30 }}
                                                         whileInView={{ opacity: 1, x: 0 }}
-                                                        viewport={{ once: false }}
+                                                        viewport={{ once: true }}
                                                         transition={{
-                                                            duration: 0.4,
-                                                            delay: index * 0.1,
-                                                            ease: "easeOut"
+                                                            duration: 0.5,
+                                                            delay: 0.4 + index * 0.15,
+                                                            type: "spring",
+                                                            stiffness: 100,
+                                                            damping: 12
                                                         }}
-                                                        className="flex items-center p-3 rounded-md transition-colors"
+                                                        className="flex items-center p-3 rounded-md"
                                                     >
                                                         <motion.div
-                                                            initial={{ scale: 0.5, opacity: 0 }}
-                                                            whileInView={{ scale: 1, opacity: 1 }}
-                                                            viewport={{ once: false }}
-                                                            transition={{ duration: 0.3, delay: index * 0.1 + 0.2 }}
+                                                            initial={{ scale: 0, opacity: 0, rotate: -90 }}
+                                                            whileInView={{ scale: 1, opacity: 1, rotate: 0 }}
+                                                            viewport={{ once: true }}
+                                                            transition={{
+                                                                duration: 0.5,
+                                                                delay: 0.5 + index * 0.15,
+                                                                type: "spring",
+                                                                stiffness: 200
+                                                            }}
                                                             className="flex-shrink-0 w-8 h-8 bg-PrimaryAccent/20 rounded-full flex items-center justify-center mr-3"
                                                         >
                                                             <span className="text-PrimaryAccent font-bold"><Dot size={48} strokeWidth={3} /></span>

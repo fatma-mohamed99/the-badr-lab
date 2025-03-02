@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Highlights: React.FC = () => {
     return (
-        <section className="bg-PrimaryAccent/10 w-full py-32">
+        <section className="bg-gradient-to-b from-PrimaryAccent/10 to-transparent w-full py-32">
             <div className=" container mx-auto ">
                 <h2 className="text-2xl font-semibold text-gray-800">Highlights</h2>
                 <div className="mt-4 space-y-4">

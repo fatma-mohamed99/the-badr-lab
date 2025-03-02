@@ -38,7 +38,7 @@ const HomeHeader: React.FC = () => {
                     </div>
 
 
-                    <ul className="hidden md:flex space-x-8 flex-grow justify-center font-medium  border-b border-blue-900 py-5 ">
+                    <ul className="hidden md:flex space-x-8 flex-grow justify-end font-medium  border-b border-blue-900 py-5 ">
                         <li>
                             <Link to="/" className=" px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
                                 Home
@@ -52,6 +52,11 @@ const HomeHeader: React.FC = () => {
                         <li>
                             <Link to="/team" className=" px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
                                 Team
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/publications " className=" px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
+                                Publications
                             </Link>
                         </li>
                         <li>
@@ -101,6 +106,15 @@ const HomeHeader: React.FC = () => {
                             </li>
                             <li>
                                 <Link
+                                    to="/publications"
+                                    className="block py-2  hover:text-main  transition-colors p-2 rounded-md   hover:bg-secondary "
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Publications
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
                                     to="/contact"
                                     className="block py-2  hover:text-main  transition-colors p-2 rounded-md   hover:bg-secondary "
                                     onClick={() => setIsMenuOpen(false)}
@@ -112,9 +126,9 @@ const HomeHeader: React.FC = () => {
                     </div>
                 )}
 
-                <div className=" grid grid-cols-2 w-full container gap-8    ">
-                    <div className='col-span-1 my-auto ml-44    '>
-                        <h1 className="text-4xl font-bold  ">
+                <div className=" grid grid-cols-1 lg:grid-cols-2 w-full container lg:gap-8 gap-0 lg:mt-0 md:mt-16  mt-24 ">
+                    <div className='col-span-1 my-auto xl:ml-44 lg:ml-32  ml-10   '>
+                        <h1 className="text-2xl lg:text-3xl xl:text-4xl font-bold  ">
                             Welcome to the Badr Lab for Translational Microbiome Research!
                         </h1>
                         <p className="mt-4 text-xl mb-6">
@@ -122,11 +136,11 @@ const HomeHeader: React.FC = () => {
                             focusing on how imbalances influence infection severity and patient outcomes.
                             Our research aims to identify microbial signatures and biomarkers for infection, cancer, and beyond.
                         </p>
-                        <Button className=' py-2.5 px-4 rounded-f text-2xl flex  items-center gap-2' >
+                        <Button className=' py-2.5 px-4 rounded-f text-2xl flex  items-center gap-2 mb-4' >
                             <div className='rounded-full p-3 bg-white'><ArrowRight className='text-PrimaryAccent' /> </div> Meet Our Team
                         </Button>
                     </div>
-                    <div className='col-span- max-h-[500px] items-end flex justify-end   '> <img
+                    <div className='col-span- max-h-[500px] lg:items-end items-center flex justify-end lg:inline-block   '> <img
                         src={bghero}
                         alt="Lab Research"
                         className=" h-full items-end self-end justify-end"

@@ -19,24 +19,29 @@ const Header: React.FC = () => {
                         </Link>
                     </div>
 
-                    <ul className="hidden md:flex space-x-8 flex-grow justify-center   ">
+                    <ul className="hidden md:flex space-x-8 flex-grow justify-end   ">
                         <li>
-                            <Link to="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+                            <Link to="/" className="px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
                                 Home
                             </Link>
                         </li>
                         <li>
-                            <Link to="/research" className="text-gray-600 hover:text-gray-900 transition-colors">
+                            <Link to="/research" className="px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
                                 Research
                             </Link>
                         </li>
                         <li>
-                            <Link to="/team" className="text-gray-600 hover:text-gray-900 transition-colors">
+                            <Link to="/team" className="px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
                                 Team
                             </Link>
                         </li>
                         <li>
-                            <Link to="/contact" className="text-gray-600 hover:text-gray-900 transition-colors">
+                            <Link to="/publications" className=" px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
+                                Publications
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to="/contact" className="px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
                                 Contact
                             </Link>
                         </li>
@@ -56,7 +61,7 @@ const Header: React.FC = () => {
                             <li>
                                 <Link
                                     to="/"
-                                    className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                                    className="block py-2 px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     Home
@@ -65,7 +70,7 @@ const Header: React.FC = () => {
                             <li>
                                 <Link
                                     to="/research"
-                                    className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                                    className="block py-2 px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     Research
@@ -74,7 +79,7 @@ const Header: React.FC = () => {
                             <li>
                                 <Link
                                     to="/team"
-                                    className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                                    className="block py-2 px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     Team
@@ -82,8 +87,17 @@ const Header: React.FC = () => {
                             </li>
                             <li>
                                 <Link
+                                    to="/publications"
+                                    className="block py-2 px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent"
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    Publications
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
                                     to="/contact"
-                                    className="block py-2 text-gray-600 hover:text-gray-900 transition-colors"
+                                    className="block py-2 px-3 py-2 transition-colors hover:px-3 hover:rounded-md  hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent"
                                     onClick={() => setIsMenuOpen(false)}
                                 >
                                     Contact
