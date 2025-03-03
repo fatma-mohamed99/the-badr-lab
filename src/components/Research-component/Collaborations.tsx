@@ -94,11 +94,11 @@ const Collaborations: React.FC = () => {
     return (
         <div className="py-10 px-4 container mx-auto">
             <motion.div
-                initial={{ y: -50, opacity: 0, scale: 0.8 }}
+                initial={{ y: -20, opacity: 0, scale: 0.8 }}
                 whileInView={{ y: 0, opacity: 1, scale: 1 }}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{
-                    duration: 0.8,
+                    duration: 0.4,
                     type: "spring",
                     bounce: 0.4
                 }}
@@ -109,8 +109,7 @@ const Collaborations: React.FC = () => {
                         initial={{ rotate: -20, scale: 0.5 }}
                         animate={{ rotate: 0, scale: 1 }}
                         transition={{
-                            duration: 0.6,
-                            delay: 0.3,
+                            duration: 0.5,
                             type: "spring"
                         }}
                     >
@@ -124,7 +123,7 @@ const Collaborations: React.FC = () => {
                 {universities.map((university, uIndex) => (
                     <motion.div
                         key={university.id}
-                        initial={{ opacity: 0, y: 80 }}
+                        initial={{ opacity: 0.5, y: 5 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{
@@ -132,19 +131,17 @@ const Collaborations: React.FC = () => {
                             type: "spring",
                             stiffness: 80,
                             damping: 12,
-                            delay: uIndex * 0.2
                         }}
                     >
                         <motion.div
-                            initial={{ opacity: 0, x: -50, scale: 0.9 }}
-                            whileInView={{ opacity: 1, x: 0, scale: 1 }}
-                            viewport={{ once: true, amount: 0.5 }}
+                            initial={{ opacity: 0.5 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true, amount: 0.2 }}
                             transition={{
-                                duration: 0.7,
+                                duration: 0.1,
                                 type: "spring",
                                 stiffness: 100,
                                 damping: 10,
-                                delay: 0.1 + uIndex * 0.1
                             }}
                             className="bg-gradient-to-l from-main/10 to-PrimaryAccent/10 px-4 py-2 rounded-xl"
                         >
@@ -175,7 +172,7 @@ const Collaborations: React.FC = () => {
                                         viewport={{ once: true, amount: 0.3 }}
                                         transition={{
                                             duration: 0.7,
-                                            delay: 0.2 + dIndex * 0.15,
+
                                             type: "spring",
                                             stiffness: 90,
                                             damping: 12
@@ -187,7 +184,7 @@ const Collaborations: React.FC = () => {
                                                 initial={{ opacity: 0, y: 15 }}
                                                 whileInView={{ opacity: 1, y: 0 }}
                                                 viewport={{ once: true, amount: 0.8 }}
-                                                transition={{ duration: 0.6, delay: 0.3 + dIndex * 0.1 }}
+                                                transition={{ duration: 0.3, delay: 0.3 }}
                                                 className="font-bold mb-4 text-lg"
                                             >
                                                 {department.name}
