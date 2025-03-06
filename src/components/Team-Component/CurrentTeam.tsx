@@ -1,7 +1,7 @@
 import React from "react";
 import { Mail, Twitter, Linkedin, UserRound } from "lucide-react";
-import memberimg from "../../assets/lab3.jpg"
-import memberimg2 from "../../assets/lab2.jpg"
+import memberimg from "../../assets/Team/3_Uzochukwu Ukachukwu.png"
+import memberimg2 from "../../assets/Team/2_Dr. Sara Posadas-Cantera.jpg"
 
 
 
@@ -19,7 +19,6 @@ const CurrentTeam: React.FC = () => {
         {
             name: "Niels van Best",
             role: "Assistant Professor",
-            photo: memberimg,
             contact: "niels.vanbest@example.com",
             twitter: "nielsvanBest",
             linkedin: "niels-van-best",
@@ -27,7 +26,6 @@ const CurrentTeam: React.FC = () => {
         {
             name: "David Barnett",
             role: "Postdoctoral Scientist",
-            photo: memberimg,
             contact: "david.barnett@example.com",
             twitter: "davidbarnett",
             linkedin: "david-barnett",
@@ -35,18 +33,21 @@ const CurrentTeam: React.FC = () => {
         {
             name: "Gianluca Galazzo",
             role: "Postdoctoral Scientist",
-            photo: memberimg2,
             contact: "gianluca.galazzo@example.com",
             twitter: "gianlucagalazzo",
             linkedin: "gianluca-galazzo",
         },
         {
             name: "Dr. Sara Posadas-Cantera",
+            photo: memberimg2,
+
             role: "Postdoctoral Scientist",
             contact: "sara.posadas.cantera@uniklinik-freiburg.de",
         },
         {
             name: "Uzochukwu Ukachukwu",
+            photo: memberimg,
+
             role: "PhD student",
             contact: "uzochukwu.gospel.ukachukwu@uniklinik-freiburg.de",
         },
@@ -54,12 +55,12 @@ const CurrentTeam: React.FC = () => {
 
     const renderTeamMember = (member: TeamMember, index: number) => (
         <div key={index} className="flex flex-col items-center text-center mb-8">
-            <div className="w-36 h-36 rounded-full overflow-hidden mb-2">
+            <div className="w-48 h-48 rounded-full overflow-hidden mb-2">
                 {member.photo ? (
                     <img
                         src={member.photo}
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                     />
                 ) : (
                     <div className="w-full h-full bg-gray-200 flex items-center justify-center">

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainLayout from "../layouts/MainLayout";
 
 const NotFound: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <MainLayout>
             <div className="h-screen flex flex-col items-center justify-center bg-gradient-to-t from-transparent to-PrimaryAccent/5 rounded-2xl mt-4">

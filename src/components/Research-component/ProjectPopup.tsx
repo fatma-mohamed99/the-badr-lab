@@ -44,18 +44,18 @@ const ProjectPopup: React.FC<{ project: Project | null; onClose: () => void }> =
                                 <div key={index} className="border border-main/20 p-5 rounded-lg shadow-md bg-white">
                                     <h2 className="text-xl font-semibold text-main border-l-2 border-PrimaryAccent pl-3 rounded-2xl">{study.title}</h2>
                                     <p className="text-gray-700 mt-2">{study.description}</p>
-                                    {study.image && <img src={study.image} alt={study.title} className="mt-4 rounded-lg border border-PrimaryAccent/30 shadow-sm h-36 w-full object-cover" />}
+                                    {study.image && <img src={study.image} alt={study.title} className="mt-4 rounded-lg border border-PrimaryAccent/30 shadow-sm h-64 w-full object-contain" />}
                                 </div>
                             ))}
                         </div>
                     )}
                 </div>
 
-                <div className="p-4 border-t flex justify-end">
+                {/* <div className="p-4 border-t flex justify-end">
                     <Button onClick={onClose} className="bg-PrimaryAccent hover:bg-main">
                         Close
                     </Button>
-                </div>
+                </div> */}
             </div>
         </div>
     );

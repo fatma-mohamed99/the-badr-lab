@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainLayout from "../layouts/MainLayout";
 import Card from './../components/Research-component/Card';
 import Collaborations from "../components/Research-component/Collaborations";
 import { Microscope, Search } from "lucide-react";
 
 const Research: React.FC = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <MainLayout>
             <div className="mb-12 mt-2 text-center ">

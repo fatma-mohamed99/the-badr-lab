@@ -1,7 +1,7 @@
 import React from "react";
 import { Mail, Twitter, Linkedin, UserRound } from "lucide-react";
-import memberimg from "../../assets/lab3.jpg"
-import memberimg2 from "../../assets/lab2.jpg"
+import memberimg from "../../assets/Team/5_IvanPotereba.jpg"
+import memberimg2 from "../../assets/Team/6_NeginMehrbarzin.png"
 interface TeamMember {
     name: string;
     role: string;
@@ -15,24 +15,24 @@ interface TeamMember {
 const PreviousTeam: React.FC = () => {
     const previousTeam: TeamMember[] = [
         {
-            name: "Anne Lichtenegger", photo: memberimg,
+            name: "Anne Lichtenegger",
             role: "Graduated Medical doctoral student"
         },
-        { name: "Ivan Potereba", role: "Graduated PhD student" },
-        { name: "Negin Mehrbarzin", role: "Graduated Medical doctoral student" },
+        { name: "Ivan Potereba", role: "Graduated PhD student", photo: memberimg },
+        { name: "Negin Mehrbarzin", role: "Graduated Medical doctoral student", photo: memberimg2 },
         {
-            name: "Simon Wetzel", role: "Graduated Medical doctoral student", photo: memberimg2,
+            name: "Simon Wetzel", role: "Graduated Medical doctoral student",
         }
     ];
 
     const renderTeamMember = (member: TeamMember, index: number) => (
         <div key={index} className="flex flex-col items-center text-center mb-8">
-            <div className="w-36 h-36 rounded-full overflow-hidden mb-2">
+            <div className="w-48 h-48 rounded-full overflow-hidden mb-2">
                 {member.photo ? (
                     <img
                         src={member.photo}
                         alt={member.name}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                     />
                 ) : (
                     <div className="w-full h-full bg-gray-200 flex items-center justify-center">

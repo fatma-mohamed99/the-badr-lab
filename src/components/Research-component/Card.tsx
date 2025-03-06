@@ -1,10 +1,12 @@
 import { useState } from "react";
 import Button from './../utilities/Button';
 import ProjectPopup from './ProjectPopup';
-import geneHuntImg from '../../assets/lab1.jpg';
-import epigeneticsImg from '../../assets/lab1.jpg';
-import immuneSystemImg from '../../assets/lab1.jpg';
-import Img from '../../assets/lab2.jpg';
+import geneHuntImg from '../../assets/Research/general-microbiome.png';
+import epigeneticsImg from '../../assets/Research/LML-Graphical-Abstract.png';
+import immuneSystemImg from '../../assets/Research/INTeGRATE.png';
+import ImgStudy1 from '../../assets/Research/HP_Study_1.png';
+import ImgStudy2 from '../../assets/Research/HP_Study_2.png';
+import ImgStudy3 from '../../assets/Research/HP_Study_3.png';
 
 type Study = {
     title: string;
@@ -28,7 +30,7 @@ const projectData: Record<string, Project> = {
                 title: "PREDICT-HP Study",
                 description: `PREDICT-HP investigates the complex interactions between Helicobacter pylori
         colonization, the intestinal microbiome, and the immune system...`,
-                image: Img
+                image: ImgStudy1
             },
             {
                 title: "Multi-Cohort Analysis for Infection Diseases Diagnosis",
@@ -45,7 +47,7 @@ const projectData: Record<string, Project> = {
                 title: "INTERGATE Study",
                 description: `Focused on advancing infection diagnostics through the application of next- and
         third-generation sequencing technologies...`,
-                image: Img
+                image: ImgStudy2
 
             },
             {
@@ -63,7 +65,7 @@ const projectData: Record<string, Project> = {
                 title: "Lung Microbiome and Cancer Study",
                 description: `This study aims to characterize the lower airway microbiome in patients with nonsmall cell lung cancer, analyzing its potential role in disease progression and
 therapeutic interventions.`,
-                image: Img
+                image: ImgStudy3
 
             },
 
@@ -103,9 +105,9 @@ const Card: React.FC = () => {
                             <img
                                 src={project.image}
                                 alt={project.title}
-                                className="w-full h-48 object-cover"
+                                className="w-full h-64 object-contain"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-r from-PrimaryAccent/40 to-main/40 opacity-50"></div>
+                            <div className="absolute inset-0 bg-gradient-to-r from-PrimaryAccent/5 to-main/10"></div>
                         </div>
                         <div className="p-4 sm:p-5 flex flex-col flex-grow">
                             <h2 className="text-lg sm:text-xl font-semibold mb-2 text-gray-700 md:min-h-14 text-center">{project.title}</h2>

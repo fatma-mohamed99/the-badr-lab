@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ExternalLink, FileText, Book, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';
@@ -128,7 +128,9 @@ export default function Publications() {
     ];
 
     const pubmedLink = "https://pubmed.ncbi.nlm.nih.gov/?term=Badr%20MT%20and%20freiburg";
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <MainLayout>
             <div className="py-10 px-4 container mx-auto">

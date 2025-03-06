@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainLayout from "../layouts/MainLayout";
 import { MapPin, Mail, Phone, Send, User, MessageSquare, Bookmark, CircleHelp, MailQuestion } from "lucide-react";
 import { motion } from "framer-motion";
@@ -41,7 +41,9 @@ const Contact: React.FC = () => {
             }, 5000);
         }, 1500);
     };
-
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     return (
         <MainLayout>
             <div className="py-12 px-4 container mx-auto">
