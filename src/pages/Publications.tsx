@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { ExternalLink, FileText, Book, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';

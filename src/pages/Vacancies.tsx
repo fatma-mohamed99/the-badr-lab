@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Briefcase, ChevronRight, FileText, ExternalLink } from 'lucide-react';
+import { useEffect } from 'react';
+import { Briefcase, FileText, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';
 

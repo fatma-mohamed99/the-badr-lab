@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import MainLayout from "../layouts/MainLayout";
 import Card from './../components/Research-component/Card';
 import Collaborations from "../components/Research-component/Collaborations";
-import { Microscope, Search } from "lucide-react";
+import { Microscope } from "lucide-react";
 
 const Research: React.FC = () => {
     useEffect(() => {

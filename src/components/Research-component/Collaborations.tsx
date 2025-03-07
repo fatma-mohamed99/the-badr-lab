@@ -1,4 +1,4 @@
-import { ArrowRightIcon, Dot, HeartHandshake, LandPlot, Sparkle, StepForward } from "lucide-react";
+import { Dot, HeartHandshake, Sparkle } from "lucide-react";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -159,7 +159,7 @@ const Collaborations: React.FC = () => {
                         </motion.div>
 
                         <div className="p-6 space-y-8">
-                            {university.departments.map((department, dIndex) => {
+                            {university.departments.map((department) => {
                                 if (!department.collaborators || department.collaborators.length === 0) {
                                     return null;
                                 }

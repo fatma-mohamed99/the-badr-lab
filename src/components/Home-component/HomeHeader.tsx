@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ArrowRight, Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight, Menu, X } from 'lucide-react';
 import logo from "../../assets/logo.gif";
-import bghero from "../../assets/bghero.svg";
 import bgheader from "../../assets/bgheader.svg";
 import Button from '../utilities/Button';
 

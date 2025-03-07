@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { Newspaper, ChevronRight, ExternalLink, Award, MapPin, Users } from 'lucide-react';
+import { useEffect } from 'react';
+import { Newspaper, ExternalLink, Award, MapPin, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';
 

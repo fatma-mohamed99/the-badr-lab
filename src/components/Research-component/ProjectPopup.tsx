@@ -1,5 +1,4 @@
 import React from "react";
-import Button from './../utilities/Button';
 import { BadgeX } from "lucide-react";
 
 type Study = {

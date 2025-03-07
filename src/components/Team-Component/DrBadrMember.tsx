@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Mail, Linkedin, ExternalLink } from "lucide-react";
 import badrimg from "../../assets/Team/1_MohamedTarekBadr.jpg";
 

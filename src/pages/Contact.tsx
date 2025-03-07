@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import MainLayout from "../layouts/MainLayout";
-import { MapPin, Mail, Phone, Send, User, MessageSquare, Bookmark, CircleHelp, MailQuestion } from "lucide-react";
+import { MapPin, Mail, Phone, Send, User, MessageSquare, Bookmark, MailQuestion } from "lucide-react";
 import { motion } from "framer-motion";
 
 const Contact: React.FC = () => {
