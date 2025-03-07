@@ -1,6 +1,6 @@
 import React from "react";
 import { Mail, Twitter, Linkedin, UserRound } from "lucide-react";
-import memberimg from "../../assets/Team/5_IvanPotereba.jpg"
+// import memberimg from "../../assets/Team/5_IvanPotereba.jpg"
 import memberimg2 from "../../assets/Team/6_NeginMehrbarzin.png"
 interface TeamMember {
     name: string;
@@ -18,7 +18,7 @@ const PreviousTeam: React.FC = () => {
             name: "Anne Lichtenegger",
             role: "Graduated Medical doctoral student"
         },
-        { name: "Ivan Potereba", role: "Graduated PhD student", photo: memberimg },
+        { name: "Ivan Potereba", role: "Graduated PhD student" },
         { name: "Negin Mehrbarzin", role: "Graduated Medical doctoral student", photo: memberimg2 },
         {
             name: "Simon Wetzel", role: "Graduated Medical doctoral student",
