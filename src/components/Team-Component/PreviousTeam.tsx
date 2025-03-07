@@ -1,6 +1,5 @@
 import React from "react";
 import { Mail, Twitter, Linkedin, UserRound } from "lucide-react";
-// import memberimg from "../../assets/Team/5_IvanPotereba.jpg"
 import memberimg2 from "../../assets/Team/6_NeginMehrbarzin.png"
 interface TeamMember {
     name: string;
