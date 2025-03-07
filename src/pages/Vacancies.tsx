@@ -142,8 +142,8 @@ export default function Vacancies() {
                     >
                         <h3 className="font-semibold text-xl mb-4">How to Apply</h3>
                         <p className="text-gray-700 mb-3">
-                            To apply for any of the positions listed above, please send the following documents to
-                            <a href="mailto:mohamed.tarek.badr@uniklinik-freiburg.de" className="text-main ml-1 hover:underline">mohamed.tarek.badr</a>:
+                            To apply for any of  positions another, please send the following documents to
+                            <a href="mailto:mohamed.tarek.badr@uniklinik-freiburg.de" className="text-main ml-1 hover:underline">mohamed.tarek.badr</a> :
                         </p>
                         <ul className="list-disc list-inside text-gray-700 mb-4 space-y-1">
                             <li>Detailed CV including your academic background and research experience</li>
