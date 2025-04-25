@@ -6,11 +6,11 @@
 
 
 .bg-white::-webkit-scrollbar {
-    width: 5px; 
+    width: 15px; 
 }
 
 .bg-white::-webkit-scrollbar-track {
-    background: #2966d6b8; 
+    background: #2966d6e2; 
     border-radius: 10px; 
 }
 
