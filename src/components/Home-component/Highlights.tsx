@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { ArrowUpRight, Briefcase, FileText, ExternalLink, X, BadgeX } from "lucide-react";
+import { ArrowUpRight, Briefcase, FileText, ExternalLink, BadgeX } from "lucide-react";
 import { motion, useAnimation, useInView } from "framer-motion";
 import { publications, vacancies } from "../../data";
 import { Vacancy } from "../../types";

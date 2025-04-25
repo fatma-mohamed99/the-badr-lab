@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Newspaper, ExternalLink, Award, MapPin, Users } from 'lucide-react';
+import { Newspaper, ExternalLink } from 'lucide-react';
 import { motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';
 import { newsItems } from '../data';
