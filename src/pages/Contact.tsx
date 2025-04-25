@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto place-items-center ">
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto  ">
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         animate={{ opacity: 1, x: 0 }}
