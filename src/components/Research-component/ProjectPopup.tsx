@@ -21,7 +21,7 @@ const ProjectPopup: React.FC<{ project: Project | null; onClose: () => void }> =
 
     return (
         <div className="fixed inset-0 bg-gradient-to-t from-main/60 to-PrimaryAccent/60 flex items-center justify-center z-50 p-4">
-            <div className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+            <div className="bg-white rounded-xl max-w-5xl w-full max-h-[70vh] overflow-y-auto scrollbar-custom">
                 <div className="bg-gradient-to-l from-main to-PrimaryAccent text-white p-4 rounded-t-xl flex justify-between items-center sticky top-0">
                     <h2 className="text-xl font-bold">{project.title}</h2>
                     <button
@@ -50,11 +50,7 @@ const ProjectPopup: React.FC<{ project: Project | null; onClose: () => void }> =
                     )}
                 </div>
 
-                {/* <div className="p-4 border-t flex justify-end">
-                    <Button onClick={onClose} className="bg-PrimaryAccent hover:bg-main">
-                        Close
-                    </Button>
-                </div> */}
+
             </div>
         </div>
     );

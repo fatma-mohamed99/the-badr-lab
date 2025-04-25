@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Mail, Linkedin, ExternalLink } from "lucide-react";
-import badrimg from "../../assets/Team/1_MohamedTarekBadr.jpg";
+import badrimg from "/assets/Team/1_MohamedTarekBadr.jpg";
 
 export default function DrBadrMember() {
     const [isVisible, setIsVisible] = useState(false);
@@ -56,7 +56,7 @@ export default function DrBadrMember() {
 
                     <div className={`md:w-2/3 p-6 border-t md:border-t-0 md:border-l border-gray-200 transition-all duration-500 delay-300 ease-out transform ${isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-8'}`}>
                         <h2 className="text-xl font-bold text-main mb-4">
-                            CV Dr. med. Mohamed Tarek Badr
+                            Dr. med. Mohamed Tarek Badr
                         </h2>
 
                         <div className="space-y-4">

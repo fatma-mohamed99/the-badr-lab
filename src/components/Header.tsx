@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
-import logo from "../assets/logo2.gif";
+import logo from "/assets/logo.jpg";
 const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -13,9 +13,11 @@ const Header: React.FC = () => {
         <header className="bg-white ">
             <div className="max-w-7xl mx-auto px-4 border-b border-black ">
                 <nav className="flex items-center gap-6 justify-between   h-16">
-                    <div className=" w-20 h-20 p-2">
-                        <Link to="/" className="text-xl font-bold text-gray-800">
-                            <img src={logo} alt="logo" />
+                    <div className="relative w-14 h-14  rounded-full overflow-hidden">
+                        <Link to="/" className="text-xl font-bold text-gray-800 cursor-pointer">
+                            <img src={logo} alt="logo" className="w-full h-full object-contain" />
+                            <div className="absolute inset-0 bg-gradient-to-l from-main/20 to-PrimaryAccent/20"></div>
+
                         </Link>
                     </div>
 

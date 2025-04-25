@@ -1,91 +1,29 @@
 import { useState } from "react";
 import Button from './../utilities/Button';
 import ProjectPopup from './ProjectPopup';
-import geneHuntImg from '../../assets/Research/general-microbiome.png';
-import epigeneticsImg from '../../assets/Research/LML-Graphical-Abstract.png';
-import immuneSystemImg from '../../assets/Research/INTeGRATE.png';
-import ImgStudy1 from '../../assets/Research/HP_Study_1.png';
-import ImgStudy2 from '../../assets/Research/HP_Study_2.png';
-import ImgStudy3 from '../../assets/Research/HP_Study_3.png';
-
-type Study = {
-    title: string;
-    description: string;
-    image?: string;
-};
-
-type Project = {
-    title: string;
-    description: string;
-    studies?: Study[];
-};
-
-const projectData: Record<string, Project> = {
-    "pathogen-host-interactions": {
-        title: "Pathogen-Host Interactions",
-        description: `We investigate how bacterial colonization influences immune modulation
-    and contributes to disease progression and tumorigenesis.`,
-        studies: [
-            {
-                title: "PREDICT-HP Study",
-                description: `PREDICT-HP investigates the complex interactions between Helicobacter pylori
-        colonization, the intestinal microbiome, and the immune system...`,
-                image: ImgStudy1
-            },
-            {
-                title: "Multi-Cohort Analysis for Infection Diseases Diagnosis",
-                description: `Our Lab leverages multi-cohort analysis to improve infectious disease diagnostics...`
-            }
-        ]
-    },
-    "clinical-metagenomics": {
-        title: "Clinical Metagenomics",
-        description: `We develop and apply cutting-edge next-generation sequencing (NGS) technologies
-    to enhance infection diagnostics...`,
-        studies: [
-            {
-                title: "INTERGATE Study",
-                description: `Focused on advancing infection diagnostics through the application of next- and
-        third-generation sequencing technologies...`,
-                image: ImgStudy2
-
-            },
-            {
-                title: "SEPTICISION",
-                description: `In SEPTICISION study we aim to apply nanopore third-generation and Illumina sequencing
-        technologies to directly sequence and identify sepsis pathogens...`
-            }
-        ]
-    },
-    "microbiome-chronic-diseases": {
-        title: "Microbiome in Chronic Diseases and Cancer",
-        description: `We study the role of the gut, airway and various other microbial communities in chronic conditions such as Crohn's disease, pancreatic cancer, and lung cancer.`
-        , studies: [
-            {
-                title: "Lung Microbiome and Cancer Study",
-                description: `This study aims to characterize the lower airway microbiome in patients with nonsmall cell lung cancer, analyzing its potential role in disease progression and
-therapeutic interventions.`,
-                image: ImgStudy3
-
-            },
-
-        ]
-    }
-};
+import { projectData, projects, } from "../../data";
+import { Project } from "../../types";
 
 const Card: React.FC = () => {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
-    const projects = [
-        { id: 1, slug: "pathogen-host-interactions", title: "Gene Hunt", image: geneHuntImg },
-        { id: 2, slug: "clinical-metagenomics", title: "Epigenetics in Immunology", image: epigeneticsImg },
-        { id: 3, slug: "microbiome-chronic-diseases", title: "The immune system and the microbiome", image: immuneSystemImg },
-    ];
+
 
     const openProjectDetails = (slug: string) => {
         const project = projectData[slug];
+        const fallbackImage = projects.find(p => p.slug === slug)?.image;
+
         if (project) {
-            setSelectedProject(project);
+
+            const updatedStudies = project.studies?.map(study => ({
+                ...study,
+                image: study.image || fallbackImage,
+            }));
+
+            setSelectedProject({
+                ...project,
+                studies: updatedStudies,
+            });
         }
     };
 

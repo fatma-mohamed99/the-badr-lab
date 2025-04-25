@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ArrowRight, Menu, X } from 'lucide-react';
-import logo from "../../assets/logo.gif";
-import bgheader from "../../assets/bgheader.svg";
+import logo from "/assets/logo.jpg";
+
+
+import bgheader from "/assets/bgheader.svg";
 import Button from '../utilities/Button';
+import logo2 from "/assets/logo2.jpg";
 
 
-import tarekBadrOne from "../../assets/Home/TarekBadrone.jpg";
-import tarekBadrTwo from "../../assets/Home/TarekBadrTwo.jpg";
-import bild1 from "../../assets/Home/Bild1.png";
+import tarekBadrOne from "/assets/Home/TarekBadrone.jpg";
+import tarekBadrTwo from "/assets/Home/TarekBadrTwo.jpg";
+import bild1 from "/assets/Home/Bild1.png";
 
 const carouselImages = [
     tarekBadrOne,
@@ -59,18 +62,16 @@ const HomeHeader: React.FC = () => {
 
             <div className="container mx-auto px-4 relative">
                 <nav className="flex items-center gap-6 justify-between h-16">
-                    <div className="w-32 h-32  mt-16 rounded-full overflow-hidden">
+                    <div className="relative w-28 h-28  mt-16 rounded-full overflow-hidden">
                         <Link to="/" className="text-xl font-bold text-gray-800">
                             <img src={logo} alt="logo" className="w-full h-full object-cover" />
+                            <div className="absolute inset-0 bg-gradient-to-l from-main/20 to-PrimaryAccent/20"></div>
+
                         </Link>
                     </div>
 
                     <ul className="hidden lg:flex space-x-8 flex-grow justify-end font-medium border-b border-blue-900 py-5">
-                        <li>
-                            <Link to="/" className="px-3 py-2 transition-colors hover:px-3 hover:rounded-md hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
-                                Home
-                            </Link>
-                        </li>
+
                         <li>
                             <Link to="/research" className="px-3 py-2 transition-colors hover:px-3 hover:rounded-md hover:bg-gradient-to-l hover:from-main hover:to-PrimaryAccent">
                                 Research
@@ -109,15 +110,7 @@ const HomeHeader: React.FC = () => {
                 {isMenuOpen && (
                     <div className="lg:hidden relative">
                         <ul className="py-2 px-4 space-y-2 bg-gradient-to-l from-transparent to-main/80 rounded-lg">
-                            <li>
-                                <Link
-                                    to="/"
-                                    className="block py-2 hover:text-main transition-colors p-2 rounded-md hover:bg-secondary"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    Home
-                                </Link>
-                            </li>
+
                             <li>
                                 <Link
                                     to="/research"

@@ -1,28 +1,13 @@
 import React from "react";
 import { Mail, Twitter, Linkedin, UserRound } from "lucide-react";
-import memberimg2 from "../../assets/Team/6_NeginMehrbarzin.png"
-interface TeamMember {
-    name: string;
-    role: string;
-    photo?: string;
-    contact?: string;
-    twitter?: string;
-    linkedin?: string;
-}
+import { previousTeam } from './../../data';
+import { TeamMember } from "../../types";
+
+
 
 
 const PreviousTeam: React.FC = () => {
-    const previousTeam: TeamMember[] = [
-        {
-            name: "Anne Lichtenegger",
-            role: "Graduated Medical doctoral student"
-        },
-        { name: "Ivan Potereba", role: "Graduated PhD student" },
-        { name: "Negin Mehrbarzin", role: "Graduated Medical doctoral student", photo: memberimg2 },
-        {
-            name: "Simon Wetzel", role: "Graduated Medical doctoral student",
-        }
-    ];
+
 
     const renderTeamMember = (member: TeamMember, index: number) => (
         <div key={index} className="flex flex-col items-center text-center mb-8">

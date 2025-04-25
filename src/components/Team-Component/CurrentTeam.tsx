@@ -1,57 +1,12 @@
 import React from "react";
 import { Mail, Twitter, Linkedin, UserRound } from "lucide-react";
-import memberimg from "../../assets/Team/3_Uzochukwu Ukachukwu.png"
-import memberimg2 from "../../assets/Team/2_Dr. Sara Posadas-Cantera.jpg"
+import { currentTeam } from "../../data";
+import { TeamMember } from "../../types";
 
 
 
-interface TeamMember {
-    name: string;
-    role: string;
-    photo?: string;
-    contact?: string;
-    twitter?: string;
-    linkedin?: string;
-}
 
 const CurrentTeam: React.FC = () => {
-    const currentTeam: TeamMember[] = [
-        {
-            name: "Niels van Best",
-            role: "Assistant Professor",
-            contact: "niels.vanbest@example.com",
-            twitter: "nielsvanBest",
-            linkedin: "niels-van-best",
-        },
-        {
-            name: "David Barnett",
-            role: "Postdoctoral Scientist",
-            contact: "david.barnett@example.com",
-            twitter: "davidbarnett",
-            linkedin: "david-barnett",
-        },
-        {
-            name: "Gianluca Galazzo",
-            role: "Postdoctoral Scientist",
-            contact: "gianluca.galazzo@example.com",
-            twitter: "gianlucagalazzo",
-            linkedin: "gianluca-galazzo",
-        },
-        {
-            name: "Dr. Sara Posadas-Cantera",
-            photo: memberimg2,
-
-            role: "Postdoctoral Scientist",
-            contact: "sara.posadas.cantera@uniklinik-freiburg.de",
-        },
-        {
-            name: "Uzochukwu Ukachukwu",
-            photo: memberimg,
-
-            role: "PhD student",
-            contact: "uzochukwu.gospel.ukachukwu@uniklinik-freiburg.de",
-        },
-    ];
 
     const renderTeamMember = (member: TeamMember, index: number) => (
         <div key={index} className="flex flex-col items-center text-center mb-8">
