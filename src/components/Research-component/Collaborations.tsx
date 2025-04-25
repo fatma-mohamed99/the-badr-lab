@@ -31,7 +31,7 @@ const Collaborations: React.FC = () => {
             </motion.div>
 
             <div className="lg:max-w-6xl mx-auto">
-                {universities.map((university, uIndex) => (
+                {universities.map((university,) => (
                     <motion.div
                         key={university.id}
 
@@ -78,7 +78,7 @@ const Collaborations: React.FC = () => {
                                         )}
 
                                         <div className="space-y-3">
-                                            {department.collaborators.map((collaborator, index) => (
+                                            {department.collaborators.map((collaborator) => (
                                                 collaborator.name && (
                                                     <motion.div
                                                         key={collaborator.id}

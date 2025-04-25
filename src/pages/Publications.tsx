@@ -28,7 +28,7 @@ export default function Publications() {
 
                 <div className="lg:max-w-6xl mx-auto">
                     <div className="space-y-6">
-                        {publications.map((publication, index) => (
+                        {publications.map((publication) => (
                             <motion.div
                                 key={publication.id}
                                 initial={{ opacity: 0, y: 44 }}

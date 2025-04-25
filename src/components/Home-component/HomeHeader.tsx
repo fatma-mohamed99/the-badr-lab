@@ -6,7 +6,6 @@ import logo from "/assets/logo.jpg";
 
 import bgheader from "/assets/bgheader.svg";
 import Button from '../utilities/Button';
-import logo2 from "/assets/logo2.jpg";
 
 
 import tarekBadrOne from "/assets/Home/TarekBadrone.jpg";

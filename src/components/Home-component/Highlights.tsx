@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { ArrowUpRight, Briefcase, FileText, ExternalLink, X, BadgeX, Newspaper, Highlighter, ChevronRight } from "lucide-react";
-import { motion, useAnimation, useInView, AnimatePresence } from "framer-motion";
+import { ArrowUpRight, Briefcase, FileText, ExternalLink, X, BadgeX } from "lucide-react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { publications, vacancies } from "../../data";
+import { Vacancy } from "../../types";
 
 const Highlights = () => {
     const importantVacancies = vacancies.filter(vacancy => vacancy.important === "true");
     const importantPublications = publications.filter(pub => pub.important === "true");
 
     const [popupOpen, setPopupOpen] = useState(false);
-    const [selectedVacancy, setSelectedVacancy] = useState(null);
+    const [selectedVacancy, setSelectedVacancy] = useState<Vacancy | null>(null);
 
     const titleRef = React.useRef(null);
     const vacanciesRef = React.useRef(null);

@@ -43,7 +43,7 @@ export default function Vacancies() {
                     </motion.div>
 
                     <div className="space-y-6">
-                        {vacancies.map((vacancy, index) => (
+                        {vacancies.map((vacancy,) => (
                             <motion.div
                                 key={vacancy.id}
                                 initial={{ opacity: 0, y: 44 }}
