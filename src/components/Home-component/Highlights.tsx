@@ -62,11 +62,11 @@ const Highlights = () => {
                             className="flex items-center justify-center gap-3 mt-10 mb-16 "
 
                         >
-                            <div className="h-px bg-gray-300 w-16 " />
+                            <div className="h-px bg-gray-300 w-16 hidden sm:inline-block " />
                             <h3 className="text-2xl font-semibold text-gray-700 flex items-center ">
                                 <FileText className="text-main mr-2" size={24} />
                                 Must-Read Publications	                            </h3>
-                            <div className="h-px bg-gray-300 w-16" />
+                            <div className="h-px bg-gray-300 w-16 hidden sm:inline-block" />
                         </motion.div>
 
                         <div className="grid grid-cols-1 gap-6">
@@ -139,12 +139,12 @@ const Highlights = () => {
                             className="flex items-center justify-center gap-3 mt-28 mb-16 "
 
                         >
-                            <div className="h-px bg-gray-300 w-16 " />
+                            <div className="h-px bg-gray-300 w-16 hidden sm:inline-block " />
                             <h3 className="text-2xl font-semibold text-gray-700 flex items-center ">
                                 <Briefcase className="text-main mr-2" size={24} />
                                 Current Vacancies
                             </h3>
-                            <div className="h-px bg-gray-300 w-16" />
+                            <div className="h-px bg-gray-300 w-16 hidden sm:inline-block" />
                         </motion.div>
 
 
