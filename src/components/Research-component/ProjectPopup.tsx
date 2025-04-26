@@ -2,11 +2,6 @@ import React from "react";
 import { BadgeX } from "lucide-react";
 import { Project } from "../../types";
 
-type Study = {
-    title: string;
-    description: string;
-    image?: string;
-};
 
 
 
