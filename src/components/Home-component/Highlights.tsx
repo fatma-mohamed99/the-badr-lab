@@ -3,6 +3,7 @@ import { ArrowUpRight, Briefcase, FileText, ExternalLink, BadgeX } from "lucide-
 import { motion, useAnimation, useInView } from "framer-motion";
 import { publications, vacancies } from "../../data";
 import { Vacancy } from "../../types";
+import EmptyStateHome from "../utilities/EmptyStateHome";
 
 const Highlights = () => {
     const importantVacancies = vacancies.filter(vacancy => vacancy.important === "true");
@@ -54,22 +55,27 @@ const Highlights = () => {
 
 
                 {/* #################################Publications Section############################################# */}
-                {importantPublications.length > 0 && (
+
+
+                <div>   <motion.div
+                    className="flex items-center justify-center gap-3 mt-10 mb-16 "
+
+                >
+                    <div className="h-px bg-gray-300 w-16 hidden sm:inline-block " />
+                    <h3 className="text-2xl font-semibold text-gray-700 flex items-center ">
+                        <FileText className="text-main mr-2" size={24} />
+                        Must-Read Publications	                            </h3>
+                    <div className="h-px bg-gray-300 w-16 hidden sm:inline-block" />
+                </motion.div></div>
+
+                {importantPublications.length > 1 ? (
                     <motion.div
                         ref={pubsRef}
                     >
-                        <motion.div
-                            className="flex items-center justify-center gap-3 mt-10 mb-16 "
 
-                        >
-                            <div className="h-px bg-gray-300 w-16 hidden sm:inline-block " />
-                            <h3 className="text-2xl font-semibold text-gray-700 flex items-center ">
-                                <FileText className="text-main mr-2" size={24} />
-                                Must-Read Publications	                            </h3>
-                            <div className="h-px bg-gray-300 w-16 hidden sm:inline-block" />
-                        </motion.div>
 
                         <div className="grid grid-cols-1 gap-6">
+
                             {importantPublications.map((publication,) => (
                                 <motion.div
                                     key={publication.id}
@@ -114,73 +120,74 @@ const Highlights = () => {
 
                     </motion.div>
 
-                )}
+                ) : (<EmptyStateHome type="publications" />)}
 
 
 
                 {/* #####################################################Vacancies Section################################################################## */}
-                {importantVacancies.length > 0 && (
-                    <motion.div
-                        ref={vacanciesRef}
-                        variants={{
-                            hidden: { opacity: 0 },
-                            visible: { opacity: 1 }
-                        }}
-                        initial="hidden"
-                        animate={vacanciesControls}
-                        className="mb-20 "
-                    >
+                <div>   <motion.div
+                    className="flex items-center justify-center gap-3 mt-28 mb-16 "
 
-
-
-
-
+                >
+                    <div className="h-px bg-gray-300 w-16 hidden sm:inline-block " />
+                    <h3 className="text-2xl font-semibold text-gray-700 flex items-center ">
+                        <Briefcase className="text-main mr-2" size={24} />
+                        Current Vacancies
+                    </h3>
+                    <div className="h-px bg-gray-300 w-16 hidden sm:inline-block" />
+                </motion.div>
+                    {importantVacancies.length > 1 ? (
                         <motion.div
-                            className="flex items-center justify-center gap-3 mt-28 mb-16 "
-
+                            ref={vacanciesRef}
+                            variants={{
+                                hidden: { opacity: 0 },
+                                visible: { opacity: 1 }
+                            }}
+                            initial="hidden"
+                            animate={vacanciesControls}
+                            className="mb-20 "
                         >
-                            <div className="h-px bg-gray-300 w-16 hidden sm:inline-block " />
-                            <h3 className="text-2xl font-semibold text-gray-700 flex items-center ">
-                                <Briefcase className="text-main mr-2" size={24} />
-                                Current Vacancies
-                            </h3>
-                            <div className="h-px bg-gray-300 w-16 hidden sm:inline-block" />
-                        </motion.div>
 
 
 
-                        <div className={`grid ${importantVacancies.length % 2 !== 0 ? 'grid-cols-1' : ' grid-cols-1 md:grid-cols-2'} gap-6 justify-center`}>
-                            {importantVacancies.map((vacancy, index) => (
-                                <motion.div
-                                    key={vacancy.id}
-                                    variants={{
-                                        hidden: { opacity: 0, x: index % 2 === 0 ? -30 : 30 },
-                                        visible: { opacity: 1, x: 0 }
-                                    }}
-                                    transition={{ duration: 1 }}
-                                    className="bg-white rounded-lg overflow-hidden shadow-md  "
-                                >
-                                    <div className="h-2 bg-gradient-to-r from-PrimaryAccent/60 to-main/30" />
-                                    <div className="px-9 py-8">
-                                        <h4 className="font-bold text-xl text-gray-800 mb-3 ">{vacancy.title}</h4>
-                                        <p className="text-gray-600 mb-4">{vacancy.description}</p>
-                                        <button
-                                            onClick={() => openPopup(vacancy)}
-                                            className="inline-flex items-center gap-1 text-main font-medium hover:text-PrimaryAccent transition-colors"
-                                        >
-                                            Apply
-                                            <motion.span
-                                                transition={{ type: "spring", stiffness: 500 }}
+
+
+
+
+
+
+                            <div className={`grid ${importantVacancies.length % 2 !== 0 ? 'grid-cols-1' : ' grid-cols-1 md:grid-cols-2'} gap-6 justify-center`}>
+                                {importantVacancies.map((vacancy, index) => (
+                                    <motion.div
+                                        key={vacancy.id}
+                                        variants={{
+                                            hidden: { opacity: 0, x: index % 2 === 0 ? -30 : 30 },
+                                            visible: { opacity: 1, x: 0 }
+                                        }}
+                                        transition={{ duration: 1 }}
+                                        className="bg-white rounded-lg overflow-hidden shadow-md  "
+                                    >
+                                        <div className="h-2 bg-gradient-to-r from-PrimaryAccent/60 to-main/30" />
+                                        <div className="px-9 py-8">
+                                            <h4 className="font-bold text-xl text-gray-800 mb-3 ">{vacancy.title}</h4>
+                                            <p className="text-gray-600 mb-4">{vacancy.description}</p>
+                                            <button
+                                                onClick={() => openPopup(vacancy)}
+                                                className="inline-flex items-center gap-1 text-main font-medium hover:text-PrimaryAccent transition-colors"
                                             >
-                                                <ArrowUpRight size={16} />
-                                            </motion.span>
-                                        </button>
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
+                                                Apply
+                                                <motion.span
+                                                    transition={{ type: "spring", stiffness: 500 }}
+                                                >
+                                                    <ArrowUpRight size={16} />
+                                                </motion.span>
+                                            </button>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </motion.div>
+                    ) : (<EmptyStateHome type="vacancies" />)}</div>
 
             </div>
             {/*#########################Apply Popup########################################### */}

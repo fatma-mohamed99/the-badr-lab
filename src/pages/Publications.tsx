@@ -3,6 +3,7 @@ import { ExternalLink, FileText, Book, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';
 import { publications, pubmedLink } from '../data';
+import EmptyState from '../components/utilities/EmptyState';
 
 export default function Publications() {
 
@@ -28,7 +29,7 @@ export default function Publications() {
 
                 <div className="lg:max-w-6xl mx-auto">
                     <div className="space-y-6">
-                        {publications.map((publication) => (
+                        {publications.length > 1 ? (publications.map((publication) => (
                             <motion.div
                                 key={publication.id}
                                 initial={{ opacity: 0, y: 44 }}
@@ -63,7 +64,8 @@ export default function Publications() {
                                     </a>
                                 </motion.div>
                             </motion.div>
-                        ))}
+                        ))) : (<EmptyState contentType='Publications' iconType="custom" customIcon={<FileText size={56} className="text-main" />}
+                        />)}
                     </div>
 
                     <motion.div

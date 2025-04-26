@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import MainLayout from '../layouts/MainLayout';
 
 import { vacancies } from '../data';
+import EmptyState from '../components/utilities/EmptyState';
 export default function Vacancies() {
 
     useEffect(() => {
@@ -43,7 +44,7 @@ export default function Vacancies() {
                     </motion.div>
 
                     <div className="space-y-6">
-                        {vacancies.map((vacancy,) => (
+                        {vacancies.length > 1 ? (vacancies.map((vacancy,) => (
                             <motion.div
                                 key={vacancy.id}
                                 initial={{ opacity: 0, y: 44 }}
@@ -80,7 +81,9 @@ export default function Vacancies() {
                                     </div>
                                 </motion.div>
                             </motion.div>
-                        ))}
+                        ))) : (<EmptyState contentType='vacancies' iconType="custom" customIcon={<Briefcase size={56} className="text-main" />}
+                        />)}
+
                     </div>
 
                     <motion.div
