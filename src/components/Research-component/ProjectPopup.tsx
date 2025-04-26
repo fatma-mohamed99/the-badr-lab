@@ -1,5 +1,6 @@
 import React from "react";
 import { BadgeX } from "lucide-react";
+import { Project } from "../../types";
 
 type Study = {
     title: string;
@@ -7,11 +8,10 @@ type Study = {
     image?: string;
 };
 
-type Project = {
-    title: string;
-    description: string;
-    studies?: Study[];
-};
+
+
+
+
 
 const ProjectPopup: React.FC<{ project: Project | null; onClose: () => void }> = ({
     project,
