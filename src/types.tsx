@@ -5,9 +5,9 @@ export type Study = {
 };
 
 export type Project = {
-    title?: string;
-    description?: string;
-    studies?: Study[];
+    title: string;
+    description: string;
+    studies: Study[];
 };
 
 
