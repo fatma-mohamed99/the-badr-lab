@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { BookX, Briefcase, ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -8,7 +8,6 @@ interface EmptyStateHomeProps {
 }
 
 const EmptyStateHome: React.FC<EmptyStateHomeProps> = ({ type }) => {
-    const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; size: number; delay: number }>>([]);
     const [isHovering, setIsHovering] = useState(false);
 
     const mainColor = "#2966d6b8";
