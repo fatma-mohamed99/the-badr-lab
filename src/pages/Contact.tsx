@@ -1,17 +1,50 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import MainLayout from "../layouts/MainLayout";
-import { MapPin, Mail, Phone, Bookmark, MailQuestion } from "lucide-react";
+import { MapPin, Mail, Phone, Send, User, MessageSquare, Bookmark, MailQuestion } from "lucide-react";
 import { motion } from "framer-motion";
-import tarekBadrTwo from "/assets/Contact/Contact.jpg";
 
 const Contact: React.FC = () => {
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, []);
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        const { name, value } = e.target;
+        setFormData(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+
+        setTimeout(() => {
+            setIsSubmitting(false);
+            setSubmitted(true);
+            setFormData({
+                name: "",
+                email: "",
+                subject: "",
+                message: ""
+            });
+
+            setTimeout(() => {
+                setSubmitted(false);
+            }, 5000);
+        }, 1500);
+    };
 
     return (
         <MainLayout>
-            <div className="py-12 sm:px-4 px-1 container mx-auto">
+            <div className="py-12 px-4 container mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: -30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -26,7 +59,7 @@ const Contact: React.FC = () => {
                     </p>
                 </motion.div>
 
-                <div className="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto  ">
+                <div className="grid md:grid-cols-2 gap-12 lg:gap-16 max-w-6xl mx-auto">
                     <motion.div
                         initial={{ opacity: 0, x: -40 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -47,7 +80,7 @@ const Contact: React.FC = () => {
                                 >
                                     <Bookmark className="text-main" size={24} />
                                 </motion.div>
-                                Contact Information
+                                Contact Information                                Contact Information
                             </h2>
 
                             <motion.div
@@ -99,7 +132,7 @@ const Contact: React.FC = () => {
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 1.6, delay: 1 }}
+                            transition={{ duration: 0.6, delay: 1 }}
                             className="bg-gradient-to-br from-main/10 to-PrimaryAccent/10 p-6 rounded-xl"
                         >
                             <p className="text-gray-700 italic">
@@ -114,22 +147,126 @@ const Contact: React.FC = () => {
                         transition={{ duration: 0.6, delay: 0.5 }}
                     >
                         <div className="bg-white shadow-lg rounded-2xl p-8 border-r-4 border-PrimaryAccent">
-                            <motion.div
-                                initial={{ opacity: 0, scale: 0.9 }}
-                                animate={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 1.6, delay: 0.7 }}
-                                className="overflow-hidden rounded-xl"
-                            >
-                                <img
-                                    src={tarekBadrTwo}
-                                    alt="Dr. Mohamed Tarek Badr"
-                                    className="w-full h-auto rounded-xl shadow-md "
-                                />
-                                <div className="mt-4 text-center">
-                                    <h3 className="text-xl font-medium text-gray-800">Dr. Mohamed Tarek Badr</h3>
-                                    <p className="text-gray-600">For any inquiries or collaboration, please feel free to contact me</p>
-                                </div>
-                            </motion.div>
+                            <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
+                                <motion.div
+                                    initial={{ scale: 0 }}
+                                    animate={{ scale: 1 }}
+                                    transition={{
+                                        duration: 0.5,
+                                        delay: 0.7,
+                                        type: "spring",
+                                        stiffness: 200
+                                    }}
+                                >
+                                    <MessageSquare className="text-main" size={24} />
+                                </motion.div>
+                                Send a Message
+                            </h2>
+
+                            {submitted ? (
+                                <motion.div
+                                    initial={{ opacity: 0, scale: 0.9 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    className="bg-green-50 p-6 rounded-lg text-center"
+                                >
+                                    <p className="text-PrimaryAccent font-medium text-lg mb-2">Message Sent Successfully!</p>
+                                    <p className="text-gray-600">We'll get back to you as soon as possible.</p>
+                                </motion.div>
+                            ) : (
+                                <form onSubmit={handleSubmit} className="space-y-5">
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: 0.8 }}
+                                        className="relative"
+                                    >
+                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <User className="text-gray-400" size={18} />
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="name"
+                                            value={formData.name}
+                                            onChange={handleChange}
+                                            placeholder="Your Name"
+                                            required
+                                            className="bg-gray-50 w-full pl-10 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-main/50"
+                                        />
+                                    </motion.div>
+
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: 0.9 }}
+                                        className="relative"
+                                    >
+                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <Mail className="text-gray-400" size={18} />
+                                        </div>
+                                        <input
+                                            type="email"
+                                            name="email"
+                                            value={formData.email}
+                                            onChange={handleChange}
+                                            placeholder="Your Email"
+                                            required
+                                            className="bg-gray-50 w-full pl-10 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-main/50"
+                                        />
+                                    </motion.div>
+
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: 1 }}
+                                        className="relative"
+                                    >
+                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                                            <Bookmark className="text-gray-400" size={18} />
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="subject"
+                                            value={formData.subject}
+                                            onChange={handleChange}
+                                            placeholder="Subject"
+                                            required
+                                            className="bg-gray-50 w-full pl-10 py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-main/50"
+                                        />
+                                    </motion.div>
+
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: 1.1 }}
+                                    >
+                                        <textarea
+                                            name="message"
+                                            value={formData.message}
+                                            onChange={handleChange}
+                                            placeholder="Your Message"
+                                            required
+                                            rows={5}
+                                            className="bg-gray-50 w-full py-3 px-4 rounded-lg focus:outline-none focus:ring-2 focus:ring-main/50"
+                                        />
+                                    </motion.div>
+
+                                    <motion.div
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5, delay: 1.2 }}
+                                        className="text-right"
+                                    >
+                                        <button
+                                            type="submit"
+                                            disabled={isSubmitting}
+                                            className={`bg-gradient-to-l from-main to-PrimaryAccent px-4 py-2 rounded-md text-white hover:scale-[1.01] transition-all flex gap-2 justify-center align-middle ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                                        >
+                                            {isSubmitting ? 'Sending...' : 'Send Message'}
+                                            <Send size={18} className="my-auto" />
+                                        </button>
+                                    </motion.div>
+                                </form>
+                            )}
                         </div>
                     </motion.div>
                 </div>
@@ -138,4 +275,4 @@ const Contact: React.FC = () => {
     );
 };
 
-export default Contact;
+export default Contact
